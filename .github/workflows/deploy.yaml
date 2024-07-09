@@ -50,8 +50,8 @@ jobs:
    
     - name: Deploy to Cloud Functions
       run: |
-        gcloud functions deploy {{ secrets.GCP_FUNCTION_NAME }} \
-          --entry-point {{ secrets.GCP_FUNCTION_NAME }} \
+        gcloud functions deploy ${{ secrets.GCP_FUNCTION_NAME }} \
+          --entry-point ${{ secrets.GCP_FUNCTION_NAME }} \
           --runtime python39 \
           --trigger-http \
           --allow-unauthenticated \

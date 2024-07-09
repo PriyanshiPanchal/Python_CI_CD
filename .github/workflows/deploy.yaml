@@ -29,11 +29,11 @@ jobs:
       with:
         project_id: ${{ secrets.GCP_PROJECT_ID }}
 
-    - name: Access Secret
-      id: access-secret
-      run: |
-        gcloud secrets versions access latest --secret=my-secret > secret.txt
-        cat secret.txt  # Optional: For debugging purposes, remove this line in production
+    # - name: Access Secret
+    #   id: access-secret
+    #   run: |
+    #     gcloud secrets versions access latest --secret=my-secret > secret.txt
+    #     cat secret.txt  # Optional: For debugging purposes, remove this line in production
    
     - name: Deploy to Cloud Functions
       run: |

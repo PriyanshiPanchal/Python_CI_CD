@@ -82,9 +82,14 @@ def initialize_model():
     region_name = 'ap-south-1'
 
     df = read_s3_file(bucket_name, file_key, aws_access_key_id, aws_secret_access_key, region_name)
-    df.drop(columns=['flight', 'duration'], inplace=True)
+
     if df is not None:
-        model, scaler, le_dict = train_model(df)
+        try:
+            df.drop(columns=['flight', 'duration'], inplace=True)
+            model, scaler, le_dict = train_model(df)
+        except Exception as e:
+            print(f"An error occurred during model training: {e}")
+            model, scaler, le_dict = None, None, None
     else:
         model, scaler, le_dict = None, None, None
 

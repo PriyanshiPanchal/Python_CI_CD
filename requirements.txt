@@ -1,0 +1,16 @@
+joblib==1.4.2
+numpy==2.0.0
+pandas==2.2.2
+python-dateutil==2.9.0.post0
+pytz==2024.1
+scikit-learn==1.5.0
+scipy==1.13.1
+six==1.16.0
+threadpoolctl==3.5.0
+tzdata==2024.1
+xgboost==2.0.3
+boto3==1.28.69
+requests==2.31.0
+flake8==6.1.0
+bandit==1.7.5
+pytest==7.4.0

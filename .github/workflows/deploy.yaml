@@ -56,3 +56,4 @@ jobs:
           --trigger-http \
           --allow-unauthenticated \
           --project ${{ secrets.GCP_PROJECT_ID }}
+          --gen2
